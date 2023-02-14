@@ -6,7 +6,7 @@ export default function Forum() {
   };
 
   return (
-    <div>
+    <div className="w-full">
       <ForumView collectionId={collectionId} />
     </div>
   );
