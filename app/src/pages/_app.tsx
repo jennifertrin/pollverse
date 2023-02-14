@@ -17,7 +17,10 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   );
 
-  const baseURL = window.location.host.includes('pollverse.vercel.app') ? "https://pollverse.vercel.app" : "http://localhost:3000";
+  const isProduction = process.env.NODE_ENV === 'production';
+
+
+  const baseURL = isProduction ? "https://pollverse.vercel.app" : "http://localhost:3000";
   const forumURL = "/forum";
   const topicURL = "/topic";
 
