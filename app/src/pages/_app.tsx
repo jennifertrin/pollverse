@@ -1,8 +1,9 @@
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { ConnectionProvider  } from "@solana/wallet-adapter-react";
+import { ConnectionProvider, useWallet  } from "@solana/wallet-adapter-react";
 import dynamic from "next/dynamic";
 import DispatchApp from "../contexts/DispatchContextProvider";
+import CivicContextProvider from "@/contexts/CivicContextProvider";
 
 export default function App({ Component, pageProps }: AppProps) {
 
@@ -18,9 +19,11 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider>
+      <CivicContextProvider>
         <DispatchApp baseURL={"http://localhost:3000"} forumURL={"/forum"} topicURL={"/topic"}>
           <Component {...pageProps} />
         </DispatchApp>
+      </CivicContextProvider>
       </WalletProvider>
     </ConnectionProvider>
   );
