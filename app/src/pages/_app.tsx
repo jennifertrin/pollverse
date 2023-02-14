@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
     }
   );
 
-  const baseURL = "http://localhost:3000";
+  const baseURL = window.location.host.includes('pollverse.vercel.app') ? "https://pollverse.vercel.app" : "http://localhost:3000";
   const forumURL = "/forum";
   const topicURL = "/topic";
 
