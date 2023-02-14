@@ -1,14 +1,14 @@
 import React from "react";
-import WalletButton from "./WalletButton";
+import { IdentityButton } from '@civic/solana-gateway-react';
 
-export default function WalletSection() {
+export default function IdentitySection() {
 
   return (
     <div className="flex flex-col font-body w-full">
       <div className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-        Connect your wallet:
+        Verify your identity:
       </div>
-      <WalletButton />
+      <IdentityButton />
     </div>
   );
 }
