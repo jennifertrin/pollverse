@@ -3,9 +3,10 @@ import type { AppProps } from "next/app";
 import { ConnectionProvider } from "@solana/wallet-adapter-react";
 import dynamic from "next/dynamic";
 import DispatchApp from "../contexts/DispatchContextProvider";
-import CivicContextProvider from "@/contexts/CivicContextProvider";
+import CivicContextProvider from "../contexts/CivicContextProvider";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import TopicModal from "@/components/TopicModal";
+import TopicModal from "../components/TopicModal";
+import Layout from "../components/layout/Layout";
 
 export default function App({ Component, pageProps }: AppProps) {
   const endpoint = "https://rpc.ankr.com/solana";
@@ -18,7 +19,6 @@ export default function App({ Component, pageProps }: AppProps) {
   );
 
   const isProduction = process.env.NODE_ENV === 'production';
-
 
   const baseURL = isProduction ? "https://pollverse.vercel.app" : "http://localhost:3000";
   const forumURL = "/forum";
@@ -33,6 +33,7 @@ export default function App({ Component, pageProps }: AppProps) {
             forumURL={forumURL}
             topicURL={topicURL}
           >
+            <Layout>
             <Component {...pageProps} />
             <BrowserRouter>
               <Routes>
@@ -42,6 +43,7 @@ export default function App({ Component, pageProps }: AppProps) {
                 />
               </Routes>
             </BrowserRouter>
+            </Layout>
           </DispatchApp>
         </CivicContextProvider>
       </WalletProvider>
