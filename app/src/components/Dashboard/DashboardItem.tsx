@@ -24,6 +24,7 @@ export default function DashboardItem({
       <div className="flex card card-compact w-96 bg-base-100 shadow-xl px-4 py-6">
         {imageLink && imageAlt ? (
           <figure>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={imageLink} alt={imageAlt} />
           </figure>
         ) : null}

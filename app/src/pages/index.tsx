@@ -19,7 +19,7 @@ export default function Home() {
     },
     {
       buttonText: "Go",
-      linkUrl: "/forum",
+      linkUrl: "/designs",
       imageAlt: "Icon of city view",
       imageLink: "/city-scene.png",
       subTitle: "Experience upcoming design plans",
