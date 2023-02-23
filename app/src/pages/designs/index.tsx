@@ -21,9 +21,13 @@ export default function DesignPage() {
       <h1 className="text-5xl font-bold my-12">Your designs</h1>
       {designs
         ? designs?.allDesigns?.map(
-            (design: { sceneName: string; sceneLink: string }) => (
+            (design: {
+              amount: number; _id: string; sceneName: string; sceneLink: string 
+}) => (
               <PayItem
                 key={design.sceneName}
+                id={design._id}
+                amount={design.amount}
                 imageLink={imageUtils(design.sceneName)}
                 imageAlt={design.sceneName}
                 linkUrl={design.sceneLink}
