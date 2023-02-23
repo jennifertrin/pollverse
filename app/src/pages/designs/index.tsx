@@ -18,6 +18,7 @@ export default function DesignPage() {
 
   return (
     <div className="w-full ml-8 mt-8">
+      <h1 className="text-5xl font-bold my-12">Your designs</h1>
       {designs
         ? designs?.allDesigns?.map(
             (design: { sceneName: string; sceneLink: string }) => (
