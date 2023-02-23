@@ -10,14 +10,8 @@ export default async function handler(
     if (connection) {
       const { db } = connection;
       const designCollection = db.collection("designs");
-      const allDesigns = designCollection.find({})
-      allDesigns.toArray(function(err: any, docs: any) {
-        if (err) {
-          console.log(err);
-        } else {
-          return res.status(200).json({ docs })
-        }
-      });
+      const allDesigns = await designCollection.find().toArray();
+      return res.status(200).json({ allDesigns: allDesigns });
     }
   } catch (e) {
     console.log(e);
