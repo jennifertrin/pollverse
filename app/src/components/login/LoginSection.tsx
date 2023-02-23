@@ -20,7 +20,7 @@ export default function LocationSection({attemptLogin, setAttemptLogin, location
       fetch(`/api/user/${publicKey}/${location}`);
       setAttemptLogin(false);
     }
-  }, [attemptLogin, location, publicKey]);
+  }, [attemptLogin, location, publicKey, setAttemptLogin]);
 
   return (
     <div className="flex flex-col h-screen w-full bg-white md:w-1/2 font-body">
