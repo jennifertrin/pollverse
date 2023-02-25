@@ -21,6 +21,7 @@ interface Props {
   linkUrl: any;
   id: string;
   amount: number;
+  proposal: any;
 }
 
 export default function PayItem({
@@ -29,6 +30,7 @@ export default function PayItem({
   imageAlt,
   imageLink,
   linkUrl,
+  proposal
 }: Props) {
   const router = useRouter();
 
@@ -121,7 +123,7 @@ export default function PayItem({
         </div>
       </div>
       <div className="flex flex-row w-3/4 justify-between">
-        <div className="flex w-full"><VoteItem /></div>
+        <div className="flex w-full"><VoteItem proposal={proposal} /></div>
         <div className="flex flex-col w-1/2 justify-end">
           <div className="flex mt-2 font-bold">Donate to this community project:</div>
           <div className="flex" ref={qrRef} />

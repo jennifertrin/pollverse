@@ -1,33 +1,71 @@
-import React, { useEffect } from "react";
-import { getAllProposals, withCastVote } from "@solana/spl-governance";
-import { Connection, PublicKey } from "@solana/web3.js";
+import React from "react";
+import { withCastVote, PROGRAM_VERSION_V2, Vote, YesNoVote, getTokenOwnerRecord } from "@solana/spl-governance";
+import { PublicKey, TransactionInstruction } from "@solana/web3.js";
+import { useWallet } from "@solana/wallet-adapter-react";
 
-const connection = new Connection("https://api.devnet.solana.com", "recent");
-const programId = new PublicKey("GovER5Lthms3bLBqWub97yVrMmEogzX7xNjdXpPPCVZw");
-const publicKey = new PublicKey("3qnpdzqPZefVvD9LjJQee8oFTQAqWTbX1f3hSeh1SYAX");
+interface Props {
+  proposal: any;
+}
 
-export default function VoteItem() {
-  useEffect(() => {
-    async function getProposals() {
-      const realms = await getAllProposals(connection, programId, publicKey);
-      return realms;
-    }
+export default function VoteItem({ proposal }: Props) {
+  const { publicKey } = useWallet();
 
-    async function fetchData() {
-      const realms = await getProposals();
-      console.log("realms", realms);
-    }
+  if (!publicKey || !proposal) return <div></div>;
 
-    fetchData();
-  }, []);
+  const programId = new PublicKey(
+    "GovER5Lthms3bLBqWub97yVrMmEogzX7xNjdXpPPCVZw"
+  );
+
+  const payer = new PublicKey(publicKey);
+
+  const instructions: TransactionInstruction[] = 
+  [{
+    keys: [{pubkey: payer, isSigner: true, isWritable: false }],
+    programId: programId,
+    data: Buffer.from('Thank you for voting on Pollverse'),
+  }];
+
+  const programVersion = PROGRAM_VERSION_V2;
+
+  const realm = new PublicKey("GovER5Lthms3bLBqWub97yVrMmEogzX7xNjdXpPPCVZw");
+
+  const governance = proposal?.account?.governance;
+
+  const proposalPublicKey = proposal?.pubKey;
+
+  const proposalOwnerRecord = proposal?.account?.tokenOwnerRecord;
+
+  const voteGoverningTokenMint = proposal?.account?.governingTokenMint;
+
+  const tokenOwnerRecord = new PublicKey('4JtzydoohQxcCuasmw1tTM8WbBLt5xvVoSFwd6YZZ9W1');
+
+  async function castVote(voteNumber: YesNoVote) {
+    const vote = await withCastVote(
+      instructions,
+      programId,
+      programVersion,
+      realm,
+      governance,
+      proposalPublicKey,
+      proposalOwnerRecord,
+      tokenOwnerRecord,
+      payer,
+      voteGoverningTokenMint,
+      Vote.fromYesNoVote(voteNumber),
+      payer
+    );
+    return vote;
+  }
 
   return (
     <div className="flex flex-col mx-auto">
-      <div><h1 className="text-4xl font-bold mt-16">Vote for this design</h1></div>
+      <div>
+        <h1 className="text-4xl font-bold mt-16">Vote for this design</h1>
+        <div className="text-sm"></div>
+      </div>
       <div className="flex flex-row gap-4 m-auto">
-        <button className="btn btn-primary">Approve</button>
-        <button className="btn btn-primary">Deny</button>
-        <button className="btn btn-primary">Abstain</button>
+        <button onClick={async () => await castVote(0)} className="btn btn-primary">Approve</button>
+        <button onClick={async () => await castVote(1)} className="btn btn-primary">Deny</button>
       </div>
     </div>
   );
