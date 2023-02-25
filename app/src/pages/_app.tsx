@@ -6,9 +6,13 @@ import DispatchApp from "../contexts/DispatchContextProvider";
 import CivicContextProvider from "@/contexts/CivicContextProvider";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import TopicModal from "../components/TopicModal";
+import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
+import { useMemo } from "react";
+import { clusterApiUrl } from "@solana/web3.js";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const endpoint = "https://rpc.ankr.com/solana";
+  const network = WalletAdapterNetwork.Devnet;
+  const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
   const WalletProvider = dynamic(
     () => import("../contexts/ClientContextProvider"),
