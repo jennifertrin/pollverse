@@ -14,6 +14,7 @@ import { clusterApiUrl, Connection, Keypair } from "@solana/web3.js";
 import { ourAddress } from "@/util/SolanaPayUtils";
 import BigNumber from "bignumber.js";
 import VoteItem from "./VoteItem";
+import Link from "next/link";
 
 interface Props {
   imageAlt?: string;
@@ -30,7 +31,7 @@ export default function PayItem({
   imageAlt,
   imageLink,
   linkUrl,
-  proposal
+  proposal,
 }: Props) {
   const router = useRouter();
 
@@ -104,28 +105,32 @@ export default function PayItem({
       <div className="flex flex-col w-1/4">
         <figure className="px-6 pt-6">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            onClick={() => router.push(linkUrl)}
-            src={imageLink}
-            alt={imageAlt}
-            className="rounded-xl cursor-pointer"
-          />
+          <Link href={linkUrl} target="_blank">
+            <img
+              src={imageLink}
+              alt={imageAlt}
+              className="rounded-xl cursor-pointer"
+            />
+          </Link>
         </figure>
         <div className="card-body items-center text-center">
           <div className="card-actions">
-            <button
-              onClick={() => router.push(linkUrl)}
-              className="btn btn-primary"
-            >
-              Explore design
+            <button className="btn btn-primary">
+            <Link href={linkUrl} target="_blank">
+                Explore design
+              </Link>
             </button>
           </div>
         </div>
       </div>
       <div className="flex flex-row w-3/4 justify-between">
-        <div className="flex w-full"><VoteItem proposal={proposal} /></div>
+        <div className="flex w-full">
+          <VoteItem proposal={proposal} />
+        </div>
         <div className="flex flex-col w-1/2 justify-end">
-          <div className="flex mt-2 font-bold">Donate to this community project:</div>
+          <div className="flex mt-2 font-bold">
+            Donate to this community project:
+          </div>
           <div className="flex" ref={qrRef} />
         </div>
       </div>
