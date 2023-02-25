@@ -13,6 +13,7 @@
     "@headlessui/react": "^1.7.10",
     "@next/font": "13.1.6",
     "@solana/pay": "^0.2.4",
+    "@solana/spl-governance": "^0.3.25",
     "@solana/spl-token": "^0.3.7",
     "@solana/wallet-adapter-base": "^0.9.20",
     "@solana/wallet-adapter-phantom": "^0.9.20",
