@@ -32,7 +32,8 @@ export default function DesignPage() {
 
     async function fetchData() {
       const realms = await getProposals();
-      setProposals(realms[0]);
+      const updatedProposals = realms[0].length > 0 ? realms[0] : realms[1];
+      setProposals(updatedProposals);
     }
     fetchData();
   }, []);
