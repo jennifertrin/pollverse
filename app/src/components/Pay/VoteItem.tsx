@@ -74,10 +74,10 @@ export default function VoteItem({ proposal }: Props) {
   return (
     <div className="flex flex-col mx-auto">
       <div>
-        <h1 className="text-4xl font-bold mt-16">Vote for this design</h1>
-        <div className="text-sm"></div>
+        <h1 className="text-4xl font-bold mt-8">Vote for this design</h1>
+        <div className="text-sm mt-4 mb-4">{proposal?.account?.descriptionLink?.length > 500 ? proposal?.account?.descriptionLink?.slice(0,500) + '...' : proposal?.account?.descriptionLink}</div>
       </div>
-      <div className="flex flex-row gap-4 m-auto">
+      <div className="flex flex-row gap-4 m-auto mb-4">
         <button
           onClick={async () => await castVote(0)}
           className="btn btn-primary"
