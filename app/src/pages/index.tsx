@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <div>
-      {!publicKey || !location || !attemptLogin ? (
+      {!publicKey || !location || attemptLogin === false ? (
         <LoginSection
           attemptLogin={attemptLogin}
           setAttemptLogin={setAttemptLogin}
