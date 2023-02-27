@@ -56,13 +56,6 @@ async function post(
     const network = WalletAdapterNetwork.Devnet
     const endpoint = clusterApiUrl(network)
     const connection = new Connection(endpoint)
-  
-    const buyerTokenAddress = await getOrCreateAssociatedTokenAccount(
-      connection,
-      daoKeypair,
-      pollverseTokenAddress,
-      userPublicKey,
-    ).then(account => account.address)
 
     const DAOTokenAddress = await getAssociatedTokenAddress(pollverseTokenAddress, daoPublicKey);
 
@@ -102,7 +95,6 @@ async function post(
         });
     }
 
-    // Return the serialized transaction
     res.status(200).json({
       transaction: base64,
       message: "Thanks for joining the DAO",
