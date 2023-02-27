@@ -24,7 +24,7 @@ export default function LocationSection({
       const login = await fetch(`/api/user/${publicKey}/${location}`).then(response => response.json());
       if (!login.address || !login.location) {
         setAttemptLogin(false);
-      }
+      } setAttemptLogin(true);
     }
     if (publicKey && location) {
       login();
@@ -45,9 +45,6 @@ export default function LocationSection({
           <div className="flex mt-6">
             <button
               disabled={!location || !publicKey}
-              onClick={() => {
-                setAttemptLogin(true);
-              }}
               className="bg-blue-500 hover:bg-blue-700 disabled:bg-blue-200 text-white w-full font-bold py-2 px-4 rounded"
             >
               Login

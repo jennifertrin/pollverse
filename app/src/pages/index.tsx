@@ -1,4 +1,5 @@
 import DashboardItem from "@/components/Dashboard/DashboardItem";
+import ClaimButton from "@/components/Pay/ClaimButton";
 import LoginSection from "@/components/login/LoginSection";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { useState } from "react";
@@ -37,7 +38,9 @@ export default function Home() {
           setLocation={setLocation}
         />
       ) : (
-        <div className="flex flex-row w-full gap-12 mt-6 mb-8 px-0 lg:px-24 mx-auto">
+        <div className="flex flex-col w-full gap-8 ml-4 mt-6 mb-8 px-0 lg:px-24 mx-auto">
+          <ClaimButton />
+          <div className="flex flex-row gap-12">
           {dashboardItems.map((item) => (
             <div key={item.title}>
               <DashboardItem
@@ -50,6 +53,7 @@ export default function Home() {
               />
             </div>
           ))}
+          </div>
         </div>
       )}
     </div>
