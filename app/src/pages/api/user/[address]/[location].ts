@@ -19,13 +19,15 @@ export default async function handler(
     if (connection) {
       const { db } = connection;
       const userAccountCollection = db.collection("users");
-      const exists = userAccountCollection.find({ address, location });
-      if (exists) {
+      const exists = userAccountCollection.find({ address: address, location: location }).count();
+      if (exists > 0) {
         return res.status(200).json({ address, location, isExists: true });
       } else {
         await userAccountCollection.insertOne({
           address,
           location,
+          firstTimeUser: true,
+          claimToken: false
         });
         return res.status(200).json({ address, location, isExists: false });
       }
