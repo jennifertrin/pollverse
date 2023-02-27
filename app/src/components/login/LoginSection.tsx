@@ -6,19 +6,28 @@ import IdentitySection from "./IdentitySection";
 
 interface Props {
   attemptLogin: boolean;
-  setAttemptLogin: Dispatch<SetStateAction<boolean>>
+  setAttemptLogin: Dispatch<SetStateAction<boolean>>;
   location: string | undefined;
-  setLocation: Dispatch<SetStateAction<string | undefined>>
-
+  setLocation: Dispatch<SetStateAction<string | undefined>>;
 }
 
-export default function LocationSection({attemptLogin, setAttemptLogin, location, setLocation} : Props) {
+export default function LocationSection({
+  attemptLogin,
+  setAttemptLogin,
+  location,
+  setLocation,
+}: Props) {
   const { publicKey } = useWallet();
 
   useEffect(() => {
-    if (publicKey && location && attemptLogin) {
-      fetch(`/api/user/${publicKey}/${location}`);
-      setAttemptLogin(false);
+    async function login() {
+      const login = await fetch(`/api/user/${publicKey}/${location}`).then(response => response.json());
+      if (!login.address || !login.location) {
+        setAttemptLogin(false);
+      }
+    }
+    if (publicKey && location) {
+      login();
     }
   }, [attemptLogin, location, publicKey, setAttemptLogin]);
 
@@ -36,7 +45,9 @@ export default function LocationSection({attemptLogin, setAttemptLogin, location
           <div className="flex mt-6">
             <button
               disabled={!location || !publicKey}
-              onClick={() => setAttemptLogin(true)}
+              onClick={() => {
+                setAttemptLogin(true);
+              }}
               className="bg-blue-500 hover:bg-blue-700 disabled:bg-blue-200 text-white w-full font-bold py-2 px-4 rounded"
             >
               Login
