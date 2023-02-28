@@ -24,9 +24,20 @@ Pollverse also allows constituents to experience and provide feedback to urban p
 
 ### 🙋‍♀️ User Onboarding
 
-In the US, legal residents without citizenship can't participate in voting which leads to a lack of engagement and comprehensive feedback for governments and civic organizations. Pollverse verifies users' legal residency and citizenship upon signup. Governments can introduce  DAO-like proposals for community matters where citizens and legal residents can vote and post opinions.  Governments can set voting power ratios to give citizens more voting power. Only citizens can still vote for political offices.
+In the US, legal residents without citizenship can't participate in voting. Governments and civic organizations in jurisdictions with large  legal immigrant populations suffer from more civic disengagement. 
+
+Pollverse verifies users' legal residency and citizenship upon signup. Citizens will still have full access to the political system. However, governments can introduce  DAO-like proposals for community matters where citizens and legal residents can vote and post opinions. 
+
+### 🗳️ Voting on Community Matters
 
 By opening certain aspects of government decision-making to the community, governments can quickly access top industry talent for faster and more informed decisions. For instance, implementing DAO-like proposals for procurement selection could prevent contractor overcharging and scams, such as the case of the Canadian government paying $54 million for a consultancy to build the ArriveCAN application, a simple mobile and web application to upload COVID-19 related travel documentation. In a DAO proposal process, verified software developers in Canada could raise concerns about the app building being overpriced. Underfunded governments and civic organizations can unlock the community to help them make better decisions. 
+
+Residents can sign up for notifications from Pollverse using their email, phone number, or Telegram. In the long run, to prevent spam, Pollverse could implement a voting system for residents to determine which organizations can access their contact information for sending notifications. Additionally, residents could choose the types of notifications they would like to receive.
+
+### 📥 Notifications
+
+Governments and civic organizations face a significant challenge in effectively communicating with residents on community matters in a cost-effective manner. While they often invest resources and are legally obligated to notify residents about certain civic events such as elections or disruptions to water supply, they lack affordable digital channels to reach residents and notify them about critical feedback surveys on government performance. This lack of accessible channels can result in lower participation rates, preventing valuable insights into the needs and concerns of residents from being captured.
+
 
 ### 🎧 VR Experiences
 
