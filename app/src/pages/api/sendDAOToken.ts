@@ -82,7 +82,7 @@ async function post(
         DAOWallet,
         userWallet,
         daoKeypair.publicKey,
-        1.5 * Math.pow(10, 6)
+        2 * Math.pow(10, 6)
     ))
 
 
