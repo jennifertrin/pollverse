@@ -1,24 +1,22 @@
 import type { NextApiRequest, NextApiResponse } from "next";
+import Moralis from "moralis";
+import { SolNetwork } from "@moralisweb3/common-sol-utils";
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<any>
 ) {
   try {
-    const options = {
-      method: "POST",
-      headers: {
-        accept: "application/json",
-        "content-type": "application/json",
-        authorization: `Bearer ${process.env.HELLO_MOON_API_KEY}`,
-      },
-      body: JSON.stringify({ ownerAccount: req.query.address }),
-    };
-    const tokens = await fetch(
-      "https://rest-api.hellomoon.io/v0/token/balances-by-owner",
-      options
-    ).then((response) => response.json());
-    return res.status(200).json({ tokens });
+    const address = req.query.address as string;
+
+    const network = SolNetwork.DEVNET;
+
+    const response = await Moralis.SolApi.account.getSPL({
+      address,
+      network,
+    });
+
+    return res.status(200).json({ response });
   } catch (e) {
     console.log(e);
     res.status(500);
