@@ -1,11 +1,9 @@
-import { createTransferCheckedInstruction, getAssociatedTokenAddress, getMint, getOrCreateAssociatedTokenAccount } from "@solana/spl-token"
+import { createTransferInstruction, getAssociatedTokenAddress, getOrCreateAssociatedTokenAccount } from "@solana/spl-token"
 import { WalletAdapterNetwork } from "@solana/wallet-adapter-base"
-import { clusterApiUrl, Connection, Keypair, PublicKey, Transaction } from "@solana/web3.js"
+import { clusterApiUrl, Connection, Keypair, PublicKey, sendAndConfirmTransaction, Transaction } from "@solana/web3.js"
 import { NextApiRequest, NextApiResponse } from "next"
-import { pollverseTokenAddress } from "../../../util/SolanaPayUtils";
+import { pollverseTokenAddress } from "../../util/SolanaPayUtils";
 import base58 from 'bs58';
-import { connectToDatabase } from "@/util/mongodb";
-
 export type MakeTransactionInputData = {
   account: string,
 }
@@ -16,7 +14,7 @@ type MakeTransactionGetResponse = {
 }
 
 export type MakeTransactionOutputData = {
-  transaction: string,
+  transaction: Transaction,
   message: string,
 }
 
@@ -36,72 +34,68 @@ async function post(
   res: NextApiResponse<MakeTransactionOutputData | ErrorOutput>
 ) {
   try {
-    // We pass the buyer's public key in JSON body
-    const account = req.query.address;
+    const { account } = req.body as MakeTransactionInputData
     if (!account) {
       res.status(40).json({ error: "No account provided" })
       return
     }
 
-    // We get the shop private key from .env - this is the same as in our script
     const daoPrivateKey = process.env.DAO_PRIVATE_KEY as string
     if (!daoPrivateKey) {
       res.status(500).json({ error: "DAO private key not available" })
     }
-    const daoKeypair = Keypair.fromSecretKey(base58.decode(daoPrivateKey))
+    const daoKeypair = Keypair.fromSecretKey(base58.decode(daoPrivateKey));
 
-    const userPublicKey = new PublicKey(account)
-    const daoPublicKey = daoKeypair.publicKey
+    const userPublicKey = new PublicKey(account);
+    const daoPublicKey = daoKeypair.publicKey;
 
     const network = WalletAdapterNetwork.Devnet
     const endpoint = clusterApiUrl(network)
     const connection = new Connection(endpoint)
 
-    const DAOTokenAddress = await getAssociatedTokenAddress(pollverseTokenAddress, daoPublicKey);
+    const DAOTokenAddress = await getAssociatedTokenAddress(pollverseTokenAddress, daoPublicKey); 
 
-    const { blockhash } = await (connection.getLatestBlockhash('finalized'))
+    const { blockhash, lastValidBlockHeight } = await (connection.getLatestBlockhash('finalized'));
 
     const transaction = new Transaction({
-      recentBlockhash: blockhash,
-
+      blockhash,
+      lastValidBlockHeight,
       feePayer: userPublicKey,
     })
 
-    const couponInstruction = createTransferCheckedInstruction(
-      DAOTokenAddress,
-      pollverseTokenAddress,
+    const userWallet = await getOrCreateAssociatedTokenAccount(
+      connection,
+      daoKeypair, 
+      pollverseTokenAddress, // which token the account is for
       userPublicKey,
-      daoPublicKey,
-      2,
-      0,
-    )
+    ).then(account => account.address)
 
-    transaction.add(couponInstruction)
+    const DAOWallet = await getOrCreateAssociatedTokenAccount(
+      connection,
+      daoKeypair,
+      pollverseTokenAddress,
+      daoKeypair.publicKey,
+  ).then(account => account.address)
 
-    transaction.partialSign(daoKeypair)
+    const tx = new Transaction();
+    tx.add(createTransferInstruction(
+        DAOWallet,
+        userWallet,
+        daoKeypair.publicKey,
+        2 * Math.pow(10, 6)
+    ))
 
-    const serializedTransaction = transaction.serialize({
-      requireAllSignatures: false
-    })
-    const base64 = serializedTransaction.toString('base64')
 
-    const mongodbConnection = await connectToDatabase();
-    if (mongodbConnection) {
-      const { db } = mongodbConnection;
-      const userAccountCollection = db.collection("users");
-      await userAccountCollection.updateOne({
-          address: account,
-          claimToken: true
-        });
-    }
+    const latestBlockHash = await connection.getLatestBlockhash('confirmed');
+    tx.recentBlockhash = await latestBlockHash.blockhash;    
+    const signature = await sendAndConfirmTransaction(connection,tx, [daoKeypair]);
 
-    res.status(200).json({
-      transaction: base64,
+    return res.status(200).json({
+      transaction: transaction,
       message: "Thanks for joining the DAO",
     })
   } catch (err) {
     console.error(err);
-
     res.status(500).json({ error: 'error creating transaction', })
     return
   }

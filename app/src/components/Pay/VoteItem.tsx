@@ -45,7 +45,7 @@ export default function VoteItem({ proposal }: Props) {
   const voteGoverningTokenMint = proposal?.account?.governingTokenMint;
 
   const tokenOwnerRecord = new PublicKey(
-    "4JtzydoohQxcCuasmw1tTM8WbBLt5xvVoSFwd6YZZ9W1"
+    "7ywgJSiT5Zc4PVN62esGMUCHvgkDwg79UZasRCPKGnQG"
   );
 
   async function castVote(voteNumber: YesNoVote) {
