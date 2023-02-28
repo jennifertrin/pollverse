@@ -10,7 +10,7 @@ export default function ClaimButton() {
     const tokenBalances = await fetch(`/api/getTokenBalance/${publicKey}`).then(
       (response) => response.json()
     );
-    const DAOToken = tokenBalances?.tokens?.find(
+    const DAOToken = tokenBalances?.response?.find(
       (item: { mint: any }) => item.mint === pollverseTokenAddressString
     );
     if (!DAOToken) return 0;
