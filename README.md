@@ -38,6 +38,15 @@ Residents can sign up for notifications from Pollverse using their email, phone 
 
 Governments and civic organizations face a significant challenge in effectively communicating with residents on community matters in a cost-effective manner. While they often invest resources and are legally obligated to notify residents about certain civic events such as elections or disruptions to water supply, they lack affordable digital channels to reach residents and notify them about critical feedback surveys on government performance. This lack of accessible channels can result in lower participation rates, preventing valuable insights into the needs and concerns of residents from being captured.
 
+Here are some examples of posters that call for feedback on government services:
+
+A poster encouraging feedback on transportation services in Seattle posted at a local YMCA.
+
+![20230215_110912](https://user-images.githubusercontent.com/38402540/222335217-989c2f2e-fdea-453b-aee5-0431d0e47177.jpg)
+
+A poster advertising a virtual meeting to collect feedback on Seattle light rail displayed at a local coffee shop.
+
+![20230222_170022](https://user-images.githubusercontent.com/38402540/222335239-22ed2efa-439d-4ea7-b4ce-1524b3f4c8f2.jpg)
 
 ### 🎧 VR Experiences
 
