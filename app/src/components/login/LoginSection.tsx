@@ -23,8 +23,6 @@ export default function LocationSection({
 }: Props) {
   const { publicKey } = useWallet();
 
-  console.log('publicKey', publicKey, location, identityAttempt)
-
   useEffect(() => {
     async function login() {
       const login = await fetch(`/api/user/${publicKey}/${location}`).then(response => response.json());
