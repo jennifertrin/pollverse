@@ -6,18 +6,24 @@ import IdentitySection from "./IdentitySection";
 
 interface Props {
   attemptLogin: boolean;
+  identityAttempt: boolean;
   setAttemptLogin: Dispatch<SetStateAction<boolean>>;
   location: string | undefined;
   setLocation: Dispatch<SetStateAction<string | undefined>>;
+  setIdentityAttempt: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function LocationSection({
   attemptLogin,
+  identityAttempt,
   setAttemptLogin,
   location,
   setLocation,
+  setIdentityAttempt
 }: Props) {
   const { publicKey } = useWallet();
+
+  console.log('publicKey', publicKey, location, identityAttempt)
 
   useEffect(() => {
     async function login() {
@@ -26,10 +32,10 @@ export default function LocationSection({
         setAttemptLogin(false);
       } setAttemptLogin(true);
     }
-    if (publicKey && location) {
+    if (publicKey && location && identityAttempt) {
       login();
     }
-  }, [attemptLogin, location, publicKey, setAttemptLogin]);
+  }, [attemptLogin, identityAttempt, location, publicKey, setAttemptLogin]);
 
   return (
     <div className="flex flex-col h-screen w-full bg-white md:w-1/2 font-body">
@@ -39,9 +45,9 @@ export default function LocationSection({
           Please sign in to proceed:
         </div>
         <div className="flex flex-col gap-6">
-          <LocationInput location={location} setLocation={setLocation} />
           <WalletSection />
-          <IdentitySection />
+          <LocationInput location={location} setLocation={setLocation} />
+          <IdentitySection setIdentityAttempt={setIdentityAttempt} />
           <div className="flex mt-6">
             <button
               disabled={!location || !publicKey}

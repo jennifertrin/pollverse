@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export default function Home() {
   const [location, setLocation] = useState<string | undefined>();
+  const [identityAttempt, setIdentityAttempt] = useState<boolean>(false);
   const [attemptLogin, setAttemptLogin] = useState<boolean>(false);
   const { publicKey } = useWallet();
 
@@ -30,12 +31,14 @@ export default function Home() {
 
   return (
     <div>
-      {!publicKey || !location || attemptLogin === false ? (
+      {!publicKey || !location || attemptLogin === false || identityAttempt === false ? (
         <LoginSection
           attemptLogin={attemptLogin}
+          identityAttempt={identityAttempt}
           setAttemptLogin={setAttemptLogin}
           location={location}
           setLocation={setLocation}
+          setIdentityAttempt={setIdentityAttempt}
         />
       ) : (
         <div className="flex flex-col w-full gap-8 ml-4 mt-6 mb-8 px-0 lg:px-24 mx-auto">
