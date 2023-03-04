@@ -20,7 +20,7 @@ export default function ProfileSection() {
   return (
     <div className="flex flex-col font-body w-full">
       <div className="block tracking-wide text-gray-700 text-3xl font-bold mb-2">
-        Welcome, <span className="text-xl font-bold">User ID: { civicProfile.address }</span>
+        Welcome, <span className="text-xl font-bold">User ID: { civicProfile?.address }</span>
       </div>
       <div />
       </div>
