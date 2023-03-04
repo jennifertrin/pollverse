@@ -7,6 +7,12 @@ export default async function handler(
   res: NextApiResponse<any>
 ) {
   try {
+    if (!Moralis.SolApi) {
+      await Moralis.start({
+        apiKey: process.env.MORALIS_API_KEY,
+      });
+    }
+
     const address = req.query.address as string;
 
     const network = SolNetwork.DEVNET;
