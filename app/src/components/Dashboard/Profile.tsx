@@ -9,21 +9,18 @@ export default function ProfileSection() {
 
   async function getCivicProfile() {
     if (!publicKey) return;
-    const profile: Profile = await CivicProfile.get(publicKey?.toString());
-    return profile;
+    const profile: Profile = await CivicProfile.get(publicKey?.toString()).then(response => response);
+    setCivicProfile(profile);
   }
 
   useEffect(() => {
-    setCivicProfile(getCivicProfile());
+    getCivicProfile();
   }, []);
 
   return (
     <div className="flex flex-col font-body w-full">
-      <div className="block uppercase tracking-wide text-gray-700 text-xl font-bold mb-2">
-        Welcome,{' '}
-      </div>
-      <div className="block uppercase tracking-wide text-gray-700 text-lg font-bold mb-2">
-        User ID: { publicKey?.toString() }
+      <div className="block tracking-wide text-gray-700 text-3xl font-bold mb-2">
+        Welcome, <span className="text-xl font-bold">User ID: { civicProfile.address }</span>
       </div>
       <div />
       </div>
