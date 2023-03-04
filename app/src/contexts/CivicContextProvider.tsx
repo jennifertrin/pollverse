@@ -18,6 +18,7 @@ export default function CivicContextProvider({ children }: Props) {
       wallet={wallet}
       gatekeeperNetwork={gatekeeperNetwork}
       connection={connection}
+      cluster={"devnet"}
     >
       {children}
     </GatewayProvider>

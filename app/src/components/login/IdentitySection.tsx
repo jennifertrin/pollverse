@@ -1,5 +1,5 @@
 import React from "react";
-import { IdentityButton } from '@civic/solana-gateway-react';
+import { IdentityButton, ButtonMode } from '@civic/solana-gateway-react';
 
 export default function IdentitySection() {
 
@@ -8,7 +8,7 @@ export default function IdentitySection() {
       <div className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
         Verify your identity:
       </div>
-      <IdentityButton />
+      <IdentityButton mode={ButtonMode.LIGHT} />
     </div>
   );
 }
