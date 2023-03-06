@@ -46,8 +46,8 @@ export default function ClaimButton() {
       {amount !== undefined &&
         amount > 0 &&
         amount < 1.5 &&
-        "Can vote community issues"}
-      {amount !== undefined && amount > 1.5 && "Full voting power as a citizen"}
+        "You can vote community issues"}
+      {amount !== undefined && amount > 1.5 && "You have full voting power as a citizen"}
       {amount == 0 && (
         <button
           onClick={async () => await claimToken()}

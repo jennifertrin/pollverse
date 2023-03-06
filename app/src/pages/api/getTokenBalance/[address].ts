@@ -7,7 +7,7 @@ export default async function handler(
   res: NextApiResponse<any>
 ) {
   try {
-    if (!Moralis.SolApi) {
+    if (!Moralis.Core.isStarted) {
       await Moralis.start({
         apiKey: process.env.MORALIS_API_KEY,
       });
