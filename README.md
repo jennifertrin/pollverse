@@ -28,6 +28,8 @@ In the US, legal residents without citizenship can't participate in voting. Gove
 
 Pollverse verifies users' legal residency and citizenship upon signup. Citizens will still have full access to the political system. However, governments can introduce  DAO-like proposals for community matters where citizens and legal residents can vote and post opinions. 
 
+**Built Using**: Solana Wallet Adapters, [Civic Key](https://www.civic.com/)
+
 ### 🗳️ Voting on Community Matters
 
 By opening certain aspects of government decision-making to the community, governments can quickly access top industry talent for faster and more informed decisions. For instance, implementing DAO-like proposals for procurement selection could prevent contractor overcharging and scams, such as the case of the Canadian government paying $54 million for a consultancy to build the ArriveCAN application, a simple mobile and web application to upload COVID-19 related travel documentation. In a DAO proposal process, verified software developers in Canada could raise concerns about the app building being overpriced. Underfunded governments and civic organizations can unlock the community to help them make better decisions. 
