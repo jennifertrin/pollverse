@@ -1,8 +1,9 @@
 import { ForumID, ForumView } from "@usedispatch/forum";
 
 export default function Forum() {
+
   const collectionId: ForumID = {
-    forumID: "2GG7RuhTjXpjYZCkgenny8wY89VqLG1qZ66HHGn2FtF9",
+    forumID: "AJw2ySYn5UkLi88U8KX8MUMzkE3Q3fkJiEsxQC8CSZLa",
   };
 
   return (

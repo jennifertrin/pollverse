@@ -34,7 +34,7 @@ const DispatchApp = ({
         buildForumPath: buildForumPath,
         buildTopicPath: buildTopicPath,
         children: children,
-        cluster: "mainnet-beta"
+        cluster: "devnet"
     }
 
     return (
