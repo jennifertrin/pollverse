@@ -33,8 +33,6 @@ export default function PayItem({
   linkUrl,
   proposal,
 }: Props) {
-  const router = useRouter();
-
   const reference = useMemo(() => Keypair.generate().publicKey, []);
 
   const qrRef = useRef<HTMLDivElement>(null);
