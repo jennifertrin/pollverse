@@ -11,7 +11,7 @@ import {
   Transaction,
   TransactionInstruction,
 } from "@solana/web3.js";
-import { useWallet } from "@solana/wallet-adapter-react";
+import { useConnection, useWallet } from "@solana/wallet-adapter-react";
 
 interface Props {
   proposal: any;
@@ -19,6 +19,7 @@ interface Props {
 
 export default function VoteItem({ proposal }: Props) {
   const { publicKey, sendTransaction } = useWallet();
+  const { connection } = useConnection();
 
   if (!publicKey || !proposal) return <div></div>;
 
@@ -33,8 +34,6 @@ export default function VoteItem({ proposal }: Props) {
   const programVersion = PROGRAM_VERSION_V3;
 
   const realm = new PublicKey("3qnpdzqPZefVvD9LjJQee8oFTQAqWTbX1f3hSeh1SYAX");
-
-  const connection = new Connection("https://api.devnet.solana.com");
 
   const governance = proposal?.account?.governance;
 

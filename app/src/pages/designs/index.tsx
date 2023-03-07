@@ -19,7 +19,6 @@ export default function DesignPage() {
     getAllDesigns();
   }, []);
 
-
   useEffect(() => {
     const connection = new Connection("https://api.devnet.solana.com");
     const programId = new PublicKey("GovER5Lthms3bLBqWub97yVrMmEogzX7xNjdXpPPCVZw");

@@ -41,10 +41,6 @@ export default function PayItem({
 
   const price = amount ? new BigNumber(amount) : new BigNumber(1);
 
-  const network = WalletAdapterNetwork.Devnet;
-  const endpoint = clusterApiUrl(network);
-  const connection = new Connection(endpoint);
-
   const urlParams: TransferRequestURLFields = {
     recipient: ourAddress,
     amount: price,
@@ -56,6 +52,10 @@ export default function PayItem({
   const url = encodeURL(urlParams);
 
   useEffect(() => {
+    const network = WalletAdapterNetwork.Devnet;
+    const endpoint = clusterApiUrl(network);
+    const connection = new Connection(endpoint, "recent");
+
     const interval = setInterval(async () => {
       try {
         // Check if there is any transaction for the reference
@@ -73,7 +73,6 @@ export default function PayItem({
           },
           { commitment: "confirmed" }
         );
-        router.push("/shop/confirmed");
       } catch (e) {
         if (e instanceof FindReferenceError) {
           // No transaction found yet, ignore this error
@@ -86,7 +85,7 @@ export default function PayItem({
         }
         console.error("Unknown error", e);
       }
-    }, 500);
+    }, 10000);
     return () => {
       clearInterval(interval);
     };
@@ -116,7 +115,7 @@ export default function PayItem({
         <div className="card-body items-center text-center">
           <div className="card-actions">
             <button className="btn btn-primary">
-            <Link href={linkUrl} target="_blank">
+              <Link href={linkUrl} target="_blank">
                 Explore design
               </Link>
             </button>
