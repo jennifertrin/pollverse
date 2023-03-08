@@ -25,6 +25,7 @@
     "@solana/wallet-adapter-sollet": "^0.11.14",
     "@solana/wallet-adapter-wallets": "^0.19.11",
     "@solana/web3.js": "^1.73.2",
+    "@stablelib/sha512": "^1.0.1",
     "@types/node": "18.13.0",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.10",
