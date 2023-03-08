@@ -34,7 +34,7 @@ Pollverse verifies users' legal residency and citizenship upon signup. Citizens 
 
 By opening certain aspects of government decision-making to the community, governments can quickly access top industry talent for faster and more informed decisions. For instance, implementing DAO-like proposals for procurement selection could prevent contractor overcharging and scams, such as the case of the Canadian government paying $54 million for a consultancy to build the ArriveCAN application, a simple mobile and web application to upload COVID-19 related travel documentation. In a DAO proposal process, verified software developers in Canada could raise concerns about the app building being overpriced. Underfunded governments and civic organizations can unlock the community to help them make better decisions. 
 
-Residents can sign up for notifications from Pollverse using their email, phone number, or Telegram. In the long run, to prevent spam, Pollverse could implement a voting system for residents to determine which organizations can access their contact information for sending notifications. Additionally, residents could choose the types of notifications they would like to receive.
+**Built Using**: Dispatch
 
 ### 📥 Notifications
 
@@ -49,6 +49,12 @@ A poster encouraging feedback on transportation services in Seattle posted at a 
 A poster advertising a virtual meeting to collect feedback on Seattle light rail displayed at a local coffee shop.
 
 ![20230222_170022](https://user-images.githubusercontent.com/38402540/222335239-22ed2efa-439d-4ea7-b4ce-1524b3f4c8f2.jpg)
+
+Pollverse allows users to subscribe to notifications on new forum threads and DAO proposals using their email, Telegram, SMS, or through their crypto wallet. Governments and civic organizations can easily and affordably communicate directly with their constituents in a timely manner. 
+
+In the long run, to prevent spam, Pollverse could implement a voting system for residents to determine which organizations can access their contact information for sending notifications. Additionally, residents could choose the types of notifications they would like to receive.
+
+**Built Using**: Dialect
 
 ### 🎧 VR Experiences
 
