@@ -11,6 +11,8 @@
   "dependencies": {
     "@civic/profile": "^0.1.5",
     "@civic/solana-gateway-react": "^0.11.2",
+    "@dialectlabs/react-sdk-blockchain-solana": "^1.0.0-beta.4",
+    "@dialectlabs/react-ui": "^1.1.0-beta.13",
     "@headlessui/react": "^1.7.10",
     "@moralisweb3/common-sol-utils": "^2.14.3",
     "@next/font": "13.1.6",
