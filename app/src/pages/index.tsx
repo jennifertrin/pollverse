@@ -1,5 +1,6 @@
 import DashboardItem from "@/components/Dashboard/DashboardItem";
 import ProfileSection from "@/components/Dashboard/Profile";
+import FrontPageImage from "@/components/FrontPageImage";
 import ClaimButton from "@/components/Pay/ClaimButton";
 import LoginSection from "@/components/login/LoginSection";
 import { useWallet } from "@solana/wallet-adapter-react";
@@ -32,32 +33,38 @@ export default function Home() {
 
   return (
     <div>
-      {!publicKey || !location || attemptLogin === false || identityAttempt === false ? (
-        <LoginSection
-          attemptLogin={attemptLogin}
-          identityAttempt={identityAttempt}
-          setAttemptLogin={setAttemptLogin}
-          location={location}
-          setLocation={setLocation}
-          setIdentityAttempt={setIdentityAttempt}
-        />
+      {!publicKey ||
+      !location ||
+      attemptLogin === false ||
+      identityAttempt === false ? (
+        <div className="flex flex-rol">
+          <LoginSection
+            attemptLogin={attemptLogin}
+            identityAttempt={identityAttempt}
+            setAttemptLogin={setAttemptLogin}
+            location={location}
+            setLocation={setLocation}
+            setIdentityAttempt={setIdentityAttempt}
+          />
+          <FrontPageImage />
+        </div>
       ) : (
         <div className="flex flex-col w-full gap-8 ml-4 mt-6 mb-8 px-0 lg:px-24 mx-auto">
           <ProfileSection />
           <ClaimButton />
           <div className="flex flex-row gap-12">
-          {dashboardItems.map((item) => (
-            <div key={item.title}>
-              <DashboardItem
-                buttonText={item.buttonText}
-                imageAlt={item.imageAlt}
-                imageLink={item.imageLink}
-                linkUrl={item.linkUrl}
-                subTitle={item.subTitle}
-                title={item.title}
-              />
-            </div>
-          ))}
+            {dashboardItems.map((item) => (
+              <div key={item.title}>
+                <DashboardItem
+                  buttonText={item.buttonText}
+                  imageAlt={item.imageAlt}
+                  imageLink={item.imageLink}
+                  linkUrl={item.linkUrl}
+                  subTitle={item.subTitle}
+                  title={item.title}
+                />
+              </div>
+            ))}
           </div>
         </div>
       )}
