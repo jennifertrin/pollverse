@@ -26,7 +26,7 @@ export default function DesignList() {
   }
 
   return (
-    <div className="flex flex-row mx-auto">
+    <div className="flex flex-wrap mx-auto gap-8">
       {designs?.map((design: any) => (
         <DesignItem
           designTitle={design.sceneName}
