@@ -25,8 +25,7 @@ export default function DesignPage() {
     getAllDesigns();
   }, []);
 
-  useEffect(() => {
-    const connection = new Connection("https://api.devnet.solana.com");
+  const connection = new Connection("https://api.devnet.solana.com");
     const programId = new PublicKey(
       "GovER5Lthms3bLBqWub97yVrMmEogzX7xNjdXpPPCVZw"
     );
@@ -34,6 +33,8 @@ export default function DesignPage() {
       "3qnpdzqPZefVvD9LjJQee8oFTQAqWTbX1f3hSeh1SYAX"
     );
 
+
+  useEffect(() => {
     async function getProposals() {
       const realms = await getAllProposals(connection, programId, publicKey);
       return realms;
@@ -42,9 +43,13 @@ export default function DesignPage() {
     async function fetchData() {
       const realms = await getProposals();
       const updatedProposals = realms[0].length > 0 ? realms[0] : realms[1];
-      setProposals(updatedProposals);
+      if (realms && updatedProposals) {
+        setProposals(updatedProposals);
+      }
+      return updatedProposals;
     }
-    fetchData();
+
+    fetchData().then((response) => console.log(response));
   }, []);
 
   function getCorrectProposal(proposalName: string) {
@@ -54,8 +59,6 @@ export default function DesignPage() {
     const correctProposal = proposals[index];
     return correctProposal;
   }
-
-  console.log('proposals', proposals);
 
   return (
     <div className="w-full ml-8 mt-8">

@@ -29,6 +29,7 @@ export default function DesignList() {
     <div className="flex flex-wrap mx-auto gap-8">
       {designs?.map((design: any) => (
         <DesignItem
+          key={design.sceneName}
           designTitle={design.sceneName}
           designDescription={design.sceneDescription}
           imageSrc={getSceneLink(design.sceneLink)}
