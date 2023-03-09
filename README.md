@@ -14,7 +14,7 @@ City Park: https://play.unity.com/mg/other/webgl-builds-315155
 
 ## 🌎 Overview
 
-Pollverse is a metaverse DAO facilitating better public policy. 
+Pollverse is a metaverse-based game amplifying better public policy.
 
 Governments and civic organizations can introduce DAO-like proposals for community matters where citizens and legal residents can vote and post opinions. 
 
