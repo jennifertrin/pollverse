@@ -34,7 +34,7 @@ Pollverse verifies users' legal residency and citizenship upon signup. Citizens 
 
 By opening certain aspects of government decision-making to the community, governments can quickly access top industry talent for faster and more informed decisions. For instance, implementing DAO-like proposals for procurement selection could prevent contractor overcharging and scams, such as the case of the Canadian government paying $54 million for a consultancy to build the ArriveCAN application, a simple mobile and web application to upload COVID-19 related travel documentation. In a DAO proposal process, verified software developers in Canada could raise concerns about the app building being overpriced. Underfunded governments and civic organizations can unlock the community to help them make better decisions. 
 
-**Built Using**: Dispatch
+**Built Using**: [Dispatch](https://www.dispatch.forum/)
 
 ### 📥 Notifications
 
@@ -54,7 +54,7 @@ Pollverse allows users to subscribe to notifications on new forum threads and DA
 
 In the long run, to prevent spam, Pollverse could implement a voting system for residents to determine which organizations can access their contact information for sending notifications. Additionally, residents could choose the types of notifications they would like to receive.
 
-**Built Using**: Dialect
+**Built Using**: [Dialect](https://www.dialect.to/)
 
 ### 🎧 VR Experiences
 
