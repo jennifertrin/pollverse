@@ -1,5 +1,5 @@
 # Pollverse 
-Metaverse faciliating better public policy
+Metaverse-based game amplifying better public policy.
 
 ## Links
 Marketing site: https://pollverse.my.canva.site/
