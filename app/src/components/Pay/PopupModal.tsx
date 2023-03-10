@@ -46,7 +46,7 @@ export default function Example({ designTitle, amount, open, setOpen }: Props) {
     const endpoint = clusterApiUrl(network);
     const connection = new Connection(endpoint, "recent");
 
-    async function getPayment() {
+    const interval = setInterval(async () => {
       try {
         // Check if there is any transaction for the reference
         const signatureInfo = await findReference(connection, reference, {
@@ -75,8 +75,10 @@ export default function Example({ designTitle, amount, open, setOpen }: Props) {
         }
         console.error("Unknown error", e);
       }
-    }
-    getPayment();
+    }, 10000);
+    return () => {
+      clearInterval(interval);
+    };
   }, [amount]);
 
   useEffect(() => {
@@ -85,7 +87,7 @@ export default function Example({ designTitle, amount, open, setOpen }: Props) {
       qrRef.current.innerHTML = "";
       qr.append(qrRef.current);
     }
-  }, []);
+  });
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -132,7 +134,7 @@ export default function Example({ designTitle, amount, open, setOpen }: Props) {
                         <p className="text-sm text-gray-500">
                           Scan this QR code in your wallet to donate 10 USDC.
                         </p>
-                        {qrRef.current ? <div className="flex" ref={qrRef} /> : <div className="text-sm text-gray-500 mt-4">Loading your QR Code...</div>}
+                        <div className="flex mx-0" ref={qrRef} />
                       </div>
                     </div>
                   </div>
