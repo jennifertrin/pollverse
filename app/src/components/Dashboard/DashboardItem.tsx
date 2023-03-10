@@ -29,8 +29,8 @@ export default function DashboardItem({
           </figure>
         ) : null}
         <div className="card-body px-12">
-          <h2 className="card-title">{title}</h2>
-          <p>{subTitle}</p>
+          <h2 className="card-title text-xl">{title}</h2>
+          <p className="text-md">{subTitle}</p>
           <div className="card-actions mt-3 justify-end">
             <button
               onClick={() => router.push(linkUrl)}
