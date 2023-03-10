@@ -1,6 +1,7 @@
 import { useWallet } from "@solana/wallet-adapter-react";
 import React, { useEffect, useState } from "react";
 import { pollverseTokenAddressString } from "../../util/SolanaPayUtils";
+import Badge from "../Badge";
 
 export default function ClaimButton() {
   const { publicKey } = useWallet();
@@ -42,12 +43,15 @@ export default function ClaimButton() {
   }, [amount]);
 
   return (
-    <div className="flex flex-col font-body w-1/3">
-      {amount !== undefined &&
-        amount > 0 &&
-        amount < 1.5 &&
-        "You can vote community issues"}
-      {amount !== undefined && amount > 1.5 && "You have full voting power as a citizen"}
+    <div className="flex flex-col font-body w-full">
+      <div className="flex text-lg mt-4">
+        {amount !== undefined && amount > 0 && amount < 1.5 && (
+          <Badge name={'Resident - Vote on Community Issues'} />
+        )}
+        {amount !== undefined && amount > 1.5 && (
+          <Badge name={'Citizen - Full Voting Power'} />
+        )}
+      </div>
       {amount == 0 && (
         <button
           onClick={async () => await claimToken()}
