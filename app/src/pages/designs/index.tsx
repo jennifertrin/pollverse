@@ -33,6 +33,10 @@ export default function DesignPage() {
       "3qnpdzqPZefVvD9LjJQee8oFTQAqWTbX1f3hSeh1SYAX"
     );
 
+    async function getProposals() {
+      const realms = await getAllProposals(connection, programId, publicKey);
+      return realms;
+    }
 
   useEffect(() => {
     async function getProposals() {
@@ -49,7 +53,7 @@ export default function DesignPage() {
       return updatedProposals;
     }
 
-    fetchData().then((response) => console.log(response));
+    fetchData().then((response) => console.log('response', response));
   }, []);
 
   function getCorrectProposal(proposalName: string) {
@@ -77,6 +81,7 @@ export default function DesignPage() {
                   key={design.sceneName}
                   id={design._id}
                   amount={design.amount}
+                  title={design.sceneName}
                   imageLink={imageUtils(design.sceneName)}
                   imageAlt={design.sceneName}
                   linkUrl={design.sceneLink}

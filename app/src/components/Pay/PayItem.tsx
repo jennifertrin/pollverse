@@ -1,20 +1,7 @@
-import React, { useEffect, useMemo, useRef } from "react";
-import { useRouter } from "next/router";
-import {
-  createQR,
-  encodeURL,
-  TransferRequestURLFields,
-  findReference,
-  validateTransfer,
-  FindReferenceError,
-  ValidateTransferError,
-} from "@solana/pay";
-import { WalletAdapterNetwork } from "@solana/wallet-adapter-base";
-import { clusterApiUrl, Connection, Keypair } from "@solana/web3.js";
-import { ourAddress } from "@/util/SolanaPayUtils";
-import BigNumber from "bignumber.js";
+import React, { useState } from "react";
 import VoteItem from "./VoteItem";
 import Link from "next/link";
+import PopupModal from "./PopupModal";
 
 interface Props {
   imageAlt?: string;
@@ -23,6 +10,7 @@ interface Props {
   id: string;
   amount: number;
   proposal: any;
+  title: string;
 }
 
 export default function PayItem({
@@ -32,70 +20,9 @@ export default function PayItem({
   imageLink,
   linkUrl,
   proposal,
+  title
 }: Props) {
-  const reference = useMemo(() => Keypair.generate().publicKey, []);
-
-  const qrRef = useRef<HTMLDivElement>(null);
-
-  const price = amount ? new BigNumber(amount) : new BigNumber(1);
-
-  const urlParams: TransferRequestURLFields = {
-    recipient: ourAddress,
-    amount: price,
-    reference,
-    label: "Pollverse",
-    message: "Thanks for your donation!",
-  };
-
-  const url = encodeURL(urlParams);
-
-  useEffect(() => {
-    const network = WalletAdapterNetwork.Devnet;
-    const endpoint = clusterApiUrl(network);
-    const connection = new Connection(endpoint, "recent");
-
-    const interval = setInterval(async () => {
-      try {
-        // Check if there is any transaction for the reference
-        const signatureInfo = await findReference(connection, reference, {
-          finality: "confirmed",
-        });
-        // Validate that the transaction has the expected recipient, amount and SPL token
-        await validateTransfer(
-          connection,
-          signatureInfo.signature,
-          {
-            recipient: ourAddress,
-            amount: price,
-            reference,
-          },
-          { commitment: "confirmed" }
-        );
-      } catch (e) {
-        if (e instanceof FindReferenceError) {
-          // No transaction found yet, ignore this error
-          return;
-        }
-        if (e instanceof ValidateTransferError) {
-          // Transaction is invalid
-          console.error("Transaction is invalid", e);
-          return;
-        }
-        console.error("Unknown error", e);
-      }
-    }, 10000);
-    return () => {
-      clearInterval(interval);
-    };
-  }, [amount]);
-
-  useEffect(() => {
-    const qr = createQR(url, 250, "transparent");
-    if (qrRef.current) {
-      qrRef.current.innerHTML = "";
-      qr.append(qrRef.current);
-    }
-  });
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <div className="bg-slate-400 card w-3/4 shadow-xl flex flex-row gap-4 justify-between">
@@ -124,12 +51,10 @@ export default function PayItem({
         <div className="flex w-full">
           <VoteItem proposal={proposal} />
         </div>
-        <div className="flex flex-col w-1/2 justify-end">
-          <div className="flex mt-2 font-bold">
-            Donate to this community project:
-          </div>
-          <div className="flex" ref={qrRef} />
-        </div>
+        <button onClick={() => setOpen(!open)} className="btn btn-primary normal-case text-md text-white font-bold py-2 px-4 rounded m-auto mr-6">
+          Donate To This Project
+        </button>
+        {open ? <PopupModal amount={amount} designTitle={title} open={open} setOpen={setOpen} /> : null}
       </div>
     </div>
   );
