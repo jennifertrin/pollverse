@@ -22,10 +22,11 @@ export default function ProfileSection() {
   }, []);
 
   return (
-    <div className="flex flex-row gap-8 font-body w-full">
+    <div className="flex border shadow-lg bg-indigo-300 rounded-3xl px-8 py-2 my-6 flex-row gap-8 font-body w-3/4">
       <div className="flex tracking-wide text-gray-700 text-3xl font-bold mb-2">
-        <div className="py-4 mt-4 dark:bg-gray-900 dark:text-gray-100">
-          <div className="flex flex-col space-y-4 md:space-y-0 md:space-x-6 md:flex-row">
+        <div className="mt-4 dark:bg-gray-900 dark:text-gray-100">
+        <span className="text-xl font-bolder">Your Superhero Profile</span>
+          <div className="flex flex-col mt-4 space-y-4 space-between md:space-y-0 md:space-x-6 md:flex-row">
             <img
               src={
                 civicProfile?.image?.url
