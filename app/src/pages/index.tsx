@@ -50,8 +50,8 @@ export default function Home() {
         </div>
       ) : (
         <div className="flex flex-col w-full gap-2 ml-4 mt-2 mb-8 px-0 lg:px-24 mx-auto">
-          <TypeAnimation />
           <ProfileSection />
+          <TypeAnimation />
           <div className="flex flex-row gap-12">
             {dashboardItems.map((item) => (
               <div key={item.title}>

@@ -21,25 +21,25 @@ export default function DashboardItem({
   const router = useRouter();
 
   return (
-      <div className="flex card card-compact w-96 bg-base-100 shadow-xl px-4 py-6">
-        {imageLink && imageAlt ? (
-          <figure>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={imageLink} alt={imageAlt} />
-          </figure>
-        ) : null}
-        <div className="card-body px-12">
-          <h2 className="card-title text-xl">{title}</h2>
-          <p className="text-md">{subTitle}</p>
-          <div className="card-actions mt-3 justify-end">
-            <button
-              onClick={() => router.push(linkUrl)}
-              className="btn btn-primary"
-            >
-              {buttonText}
-            </button>
-          </div>
+    <div className="flex rounded-2xl bg-base-100 shadow-xl px-4 py-6">
+      {imageLink && imageAlt ? (
+        <figure>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={imageLink} alt={imageAlt} />
+        </figure>
+      ) : null}
+      <div className="card-body px-12">
+        <h2 className="text-3xl font-bold">{title}</h2>
+        <p className="text-lg">{subTitle}</p>
+        <div className="card-actions mt-3 justify-end">
+          <button
+            onClick={() => router.push(linkUrl)}
+            className="btn btn-primary w-full"
+          >
+            {buttonText}
+          </button>
         </div>
       </div>
+    </div>
   );
 }
