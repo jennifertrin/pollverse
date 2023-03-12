@@ -64,7 +64,7 @@ Pollverse's VR and AR experiences let constituents experience proposed designs a
 
 In addition, organizations can offer bounties for solution updates to existing design plans, enabling the government to collaborate with community architects. Governments can also sell pre-developed design assets to other governments, architecture firms, and gaming studios as NFTs, resulting in additional revenue streams.
 
-**Built Using**: Unity, [Blockade Labs Skybox](https://www.blockadelabs.com/)
+**Built Using**: Unity, [Blockade Labs Skybox](https://www.blockadelabs.com/), 3D Scanning using [Polycam](https://poly.cam/)
 
 
 
