@@ -18,7 +18,7 @@ export default function IdentitySection({ setIdentityAttempt }: Props) {
   return (
     <div className="flex flex-col font-body w-full">
       <div className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-        Verify your identity:
+        3. Verify your identity:
       </div>
       <IdentityButton mode={ButtonMode.LIGHT} />
     </div>

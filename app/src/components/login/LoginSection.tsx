@@ -36,11 +36,11 @@ export default function LocationSection({
   }, [attemptLogin, identityAttempt, location, publicKey, setAttemptLogin]);
 
   return (
-    <div className="flex flex-col h-screen w-full bg-white md:w-1/2 font-body">
+    <div className="flex flex-col h-screen w-full md:w-1/2 font-body">
       <div className="mx-10">
         <div className="flex font-bold mt-6 text-4xl">Welcome to Pollverse</div>
         <div className="flex mt-8 mb-6 font-normal  text-lg">
-          Please sign in to proceed:
+          Sign in to make an impact.
         </div>
         <div className="flex flex-col gap-6">
           <WalletSection />
@@ -49,7 +49,7 @@ export default function LocationSection({
           <div className="flex mt-6">
             <button
               disabled={!location || !publicKey}
-              className="bg-blue-500 hover:bg-blue-700 disabled:bg-blue-200 text-white w-full font-bold py-2 px-4 rounded"
+              className="bg-primary disabled:bg-blue-200 text-white w-full font-bold py-2 px-4 rounded"
             >
               Login
             </button>

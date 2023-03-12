@@ -9,10 +9,10 @@ export default function LocationInput({location, setLocation} : LocationInputPro
   return (
     <div className="w-full mb-6 md:mb-0">
       <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
-        Location:
+        2. Location:
       </label>
       <input
-        className="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+        className="appearance-none block w-full bg-white-100 border-2 border-slate-300 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none"
         id="grid-first-name"
         type="text"
         defaultValue={location}

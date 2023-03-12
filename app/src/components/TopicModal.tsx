@@ -41,7 +41,7 @@ export default function TopicModal() {
               leaveFrom="opacity-100 translate-y-0 sm:scale-100"
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
-              <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all w-2/3">
+              <Dialog.Panel className="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all w-2/3">
                 <TopicView topicId={1} forumId={collectionId} />
               </Dialog.Panel>
             </Transition.Child>
