@@ -4,6 +4,7 @@ import FrontPageImage from "@/components/FrontPageImage";
 import LoginSection from "@/components/login/LoginSection";
 import { useWallet } from "@solana/wallet-adapter-react";
 import { useState } from "react";
+import TypeAnimation from "@/components/Game/TypeAnimation";
 
 export default function Home() {
   const [location, setLocation] = useState<string | undefined>();
@@ -49,6 +50,7 @@ export default function Home() {
         </div>
       ) : (
         <div className="flex flex-col w-full gap-2 ml-4 mt-2 mb-8 px-0 lg:px-24 mx-auto">
+          <TypeAnimation />
           <ProfileSection />
           <div className="flex flex-row gap-12">
             {dashboardItems.map((item) => (
