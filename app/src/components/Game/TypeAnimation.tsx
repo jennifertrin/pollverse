@@ -17,7 +17,7 @@ const TypeComponent = () => {
         ]}
         wrapper="div"
         cursor={false}
-        repeat={Infinity}
+        repeat={4}
         style={{ fontSize: "1.75em" }}
         className={"flex text-lg"}
       />
