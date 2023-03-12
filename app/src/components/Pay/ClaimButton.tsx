@@ -55,7 +55,7 @@ export default function ClaimButton() {
       {amount == 0 && (
         <button
           onClick={async () => await claimToken()}
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          className="w-1/2 bg-primary text-sm text-white font-bold py-2 px-4 rounded"
         >
           Claim 2 Tokens
         </button>
