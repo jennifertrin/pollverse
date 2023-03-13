@@ -1,14 +1,24 @@
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { ForumID, TopicView } from "@usedispatch/forum";
 
-export default function TopicModal() {
+interface Props {
+  topicId: number
+}
+
+export default function TopicModal({topicId} : Props) {
   const [open, setOpen] = useState(true);
   const cancelButtonRef = useRef(null);
 
   const collectionId: ForumID = {
     forumID: "AJw2ySYn5UkLi88U8KX8MUMzkE3Q3fkJiEsxQC8CSZLa",
   };
+
+  useEffect(() => {
+    if (topicId) {
+      setOpen(true)
+    }
+  }, [topicId])
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -42,7 +52,7 @@ export default function TopicModal() {
               leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all w-2/3">
-                <TopicView topicId={1} forumId={collectionId} />
+                <TopicView topicId={topicId} forumId={collectionId} />
               </Dialog.Panel>
             </Transition.Child>
           </div>
