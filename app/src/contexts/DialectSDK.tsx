@@ -6,7 +6,6 @@ import {
   DialectSolanaWalletAdapter
 } from "@dialectlabs/blockchain-sdk-solana";
 import { Monitor, Monitors, Pipelines, ResourceId, SourceData } from '@dialectlabs/monitor';
-// @ts-ignore
 import { Duration } from 'luxon';
 import { pollverseDAOAddress } from "@/util/SolanaPayUtils";
 
