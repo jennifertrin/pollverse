@@ -1,5 +1,10 @@
 # Pollverse 
-Metaverse-based game amplifying better public policy.
+
+## 🌎 Overview
+
+Pollverse is a metaverse-based game amplifying better public policy. It digitally transforms the city into a new network state that enables wider inclusion, better understand the implications of public policy, and better technical procurement decisions. 
+
+Governments and civic organizations encounter more civic disengagement especially amongst youth and immigrants, struggle to outreach to their communities at scale, and make poor decisions on how to modernize their tech stack. 
 
 ## Setup
 
@@ -27,14 +32,6 @@ DAO Example on Realms: https://app.realms.today/dao/3qnpdzqPZefVvD9LjJQee8oFTQAq
 #### Demo 3D Scene Experiences
 
 City Park: https://play.unity.com/mg/other/webgl-builds-315155
-
-## 🌎 Overview
-
-Pollverse is a metaverse-based game amplifying better public policy.
-
-Governments and civic organizations can introduce DAO-like proposals for community matters where citizens and legal residents can vote and post opinions. 
-
-Pollverse also allows constituents to experience and provide feedback to urban planning designs through VR and AR, and helps organizations analyze patterns in human behavior.
 
 **Creating the CivicTechDAO…**
 
