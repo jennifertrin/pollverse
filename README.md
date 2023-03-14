@@ -6,6 +6,12 @@ Pollverse is a metaverse-based game amplifying better public policy. It digitall
 
 Governments and civic organizations encounter more civic disengagement especially amongst youth and immigrants, struggle to outreach to their communities at scale, and make poor decisions on how to modernize their tech stack. 
 
+Users onboard onto Pollverse using their wallet and verifying their location using Civic Key. Users maintain their anonymity and privacy and do not need to fear governments identifying them based on their race, immigration status, or any other bias.
+
+Pollverse includes a web3 forum where governments can post threads and residents can reply to threads. Governments can summon a thread for anything from feedback on procurement of technical services to infrastructure designs. For threads on infrastructure designs, residents can auto-generate designs that they are better for implementation.
+
+Residents can also experience infrastructure designs using AR//VR, vote on the proposals in-app, and even donate to community infrastructure projects.
+
 ## Setup
 
 **Local**
