@@ -77,7 +77,17 @@ Closed, non-interactive design plans for urban development hinder community alig
 
 Pollverse's VR/AR experiences let constituents experience proposed designs and their potential impact on cities before construction, providing a more informed decision-making process. This game-like approach attracts younger constituents to become more engaged.
 
-**Built Using**: Unity, [Blockade Labs Skybox](https://www.blockadelabs.com/), 3D Scanning using [Polycam](https://poly.cam/)
+I created AR experiences of public infrastructure designs with links to a Realms DAO proposal and Dispatch forum thread within them. 
+
+I utilized the Polycam app to 3D scan real-life public infrastructure objects such as signs and bike racks in Bellevue, Washington. Afterwards, I refined the 3D assets in Blender. I used Adobe Aero to develop the AR experiences with the refined 3D assets. 
+
+**Examples**
+
+https://youtu.be/DL7c-6guawA
+
+https://youtube.com/shorts/AMWx08lYVVY?feature=share
+
+**Built Using**: Unity, [Blockade Labs Skybox](https://www.blockadelabs.com/), 3D Scanning using [Polycam](https://poly.cam/), Blender, Adobe Aero
 
 
 
