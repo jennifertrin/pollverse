@@ -1,7 +1,22 @@
 # Pollverse 
 Metaverse-based game amplifying better public policy.
 
-## Links
+## Setup
+
+**Local**
+
+```
+cd app
+yarn
+yarn dev
+```
+
+**Production**
+
+https://pollverse.vercel.app
+
+
+## Important Links
 Marketing site: https://pollverse.my.canva.site/
 
 Live app: https://pollverse.vercel.app
@@ -56,15 +71,23 @@ In the long run, to prevent spam, Pollverse could implement a voting system for 
 
 **Built Using**: [Dialect](https://www.dialect.to/)
 
-### 🎧 VR Experiences
+### 🎧 VR/AR Experiences
 
 Closed, non-interactive design plans for urban development hinder community alignment and participation. For example,  the construction of highways through American urban cores in the 1950s and 1960s had negative social and environmental impacts. Imagine if  constituents could experience proposed designs and identify potential impacts before construction. The layout of the modern American city would be more prosperous, equitable, and environmentally safe.
 
-Pollverse's VR and AR experiences let constituents experience proposed designs and their potential impact on cities before construction, providing a more informed decision-making process. This game-like approach attracts younger constituents to become more engaged.
+Pollverse's VR/AR experiences let constituents experience proposed designs and their potential impact on cities before construction, providing a more informed decision-making process. This game-like approach attracts younger constituents to become more engaged.
 
-In addition, organizations can offer bounties for solution updates to existing design plans, enabling the government to collaborate with community architects. Governments can also sell pre-developed design assets to other governments, architecture firms, and gaming studios as NFTs, resulting in additional revenue streams.
+I created AR experiences of public infrastructure designs with links to a Realms DAO proposal and Dispatch forum thread within them. 
 
-**Built Using**: Unity, [Blockade Labs Skybox](https://www.blockadelabs.com/), 3D Scanning using [Polycam](https://poly.cam/)
+I utilized the Polycam app to 3D scan real-life public infrastructure objects such as signs and bike racks in Bellevue, Washington. Afterwards, I refined the 3D assets in Blender. I used Adobe Aero to develop the AR experiences with the refined 3D assets. 
+
+**Examples**
+
+https://youtu.be/DL7c-6guawA
+
+https://youtube.com/shorts/AMWx08lYVVY?feature=share
+
+**Built Using**: Unity, [Blockade Labs Skybox](https://www.blockadelabs.com/), 3D Scanning using [Polycam](https://poly.cam/), Blender, Adobe Aero
 
 
 
