@@ -6,7 +6,7 @@ export default async function handler(
 ) {
   try {
     console.log('req', req);
-    return res.status(200);
+    return res.status(200).json({ req: req });
   } catch (e) {
     console.log(e);
     res.status(500);
