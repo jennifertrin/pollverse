@@ -16,7 +16,7 @@ export default function DesignItem({
   const [open, setOpen] = useState<boolean>(false);
   
   return (
-    <div className="flex flex-col gap-4 bg-slate-300 px-8 py-6 rounded-lg h-full w-full md:h-86 md:w-1/3">
+    <div className="flex flex-col gap-4 bg-slate-300 px-8 py-6 rounded-lg h-full w-full md:h-86 md:w-2/5">
       <div className="flex flex-col">
         <h1 className="flex text-4xl font-bold mt-8">{designTitle}</h1>
         <div className="flex text-md mt-4 mb-4">{designDescription}</div>

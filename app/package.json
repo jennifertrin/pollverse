@@ -42,6 +42,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-photo-sphere-viewer": "^3.3.3-psv5.1.1",
+    "react-player": "^2.12.0",
     "react-type-animation": "^2.1.2",
     "typescript": "4.9.5"
   },
