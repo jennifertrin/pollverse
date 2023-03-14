@@ -3,10 +3,10 @@ import { Dialog, Transition } from "@headlessui/react";
 import { ForumID, TopicView } from "@usedispatch/forum";
 
 interface Props {
-  topicId: number
+  topicId: number;
 }
 
-export default function TopicModal({topicId} : Props) {
+export default function TopicModal({ topicId }: Props) {
   const [open, setOpen] = useState(true);
   const cancelButtonRef = useRef(null);
 
@@ -16,9 +16,9 @@ export default function TopicModal({topicId} : Props) {
 
   useEffect(() => {
     if (topicId) {
-      setOpen(true)
+      setOpen(true);
     }
-  }, [topicId])
+  }, [topicId]);
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -53,6 +53,20 @@ export default function TopicModal({topicId} : Props) {
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg text-left shadow-xl transition-all w-2/3">
                 <TopicView topicId={topicId} forumId={collectionId} />
+                <div className="p-4 bg-indigo-100 mx-auto">
+                  <h1 className="text-xl mb-2">
+                    Have a better idea for a design?
+                  </h1>
+                  <p className="text-sm mb-6">
+                    Generate a design, download it, and then upload it your
+                    feedback post.
+                  </p>
+                  <iframe
+                    className="h-screen w-full"
+                    src="https://skybox.blockadelabs.com/"
+                    title="Blockade Labs Design Generator"
+                  />
+                </div>
               </Dialog.Panel>
             </Transition.Child>
           </div>
