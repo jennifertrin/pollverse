@@ -10,7 +10,7 @@ Users onboard onto Pollverse using their wallet and verifying their location usi
 
 Pollverse includes a web3 forum where governments can post threads and residents can reply to threads. Governments can summon a thread for anything from feedback on procurement of technical services to infrastructure designs. For threads on infrastructure designs, residents can auto-generate designs that they are better for implementation.
 
-Residents can also experience infrastructure designs using AR//VR, vote on the proposals in-app, and even donate to community infrastructure projects.
+Residents can also experience infrastructure designs using AR/VR, vote on the proposals in-app, and even donate to community infrastructure projects.
 
 ## Preview
 
