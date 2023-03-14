@@ -33,7 +33,7 @@ https://pollverse.vercel.app
 
 **Live app**: https://pollverse.vercel.app
 
-DAO Example on Realms: https://app.realms.today/dao/3qnpdzqPZefVvD9LjJQee8oFTQAqWTbX1f3hSeh1SYAX?cluster=devnet
+**DAO Example on Realms**: https://app.realms.today/dao/3qnpdzqPZefVvD9LjJQee8oFTQAqWTbX1f3hSeh1SYAX?cluster=devnet
 
 #### Demo 3D Scene Experiences
 
