@@ -12,7 +12,7 @@ Pollverse includes a web3 forum where governments can post threads and residents
 
 Residents can also experience infrastructure designs using AR//VR, vote on the proposals in-app, and even donate to community infrastructure projects.
 
-## Setup
+## Preview
 
 **Local**
 
@@ -27,17 +27,29 @@ yarn dev
 https://pollverse.vercel.app
 
 ## Important Links
-Slide Deck: https://www.canva.com/design/DAFdNCi7i7U/CylG5ZlqonKbK_tGHMVRaA/edit?utm_content=DAFdNCi7i7U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+**Slide Deck**: https://www.canva.com/design/DAFdNCi7i7U/CylG5ZlqonKbK_tGHMVRaA/edit?utm_content=DAFdNCi7i7U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
 
-Marketing site: https://pollverse.my.canva.site/
+**Marketing site**: https://pollverse.my.canva.site/
 
-Live app: https://pollverse.vercel.app
+**Live app**: https://pollverse.vercel.app
 
 DAO Example on Realms: https://app.realms.today/dao/3qnpdzqPZefVvD9LjJQee8oFTQAqWTbX1f3hSeh1SYAX?cluster=devnet
 
 #### Demo 3D Scene Experiences
 
-City Park: https://play.unity.com/mg/other/webgl-builds-315155
+**City Park (Unity WebGL)**: https://play.unity.com/mg/other/webgl-builds-315155
+
+**Proposal for New Sign Displays (AR)**: 
+
+- Example Video: https://youtu.be/DL7c-6guawA
+
+- AR Demo: https://adobeaero.app.link/Oi05Y58f7xb
+
+**Proposal for New Bike Racks (AR)**:
+
+- Example Video: https://youtube.com/shorts/AMWx08lYVVY?feature=share
+
+- AR Demo: https://adobeaero.app.link/Oi05Y58f7xb
 
 **Creating the CivicTechDAO…**
 
