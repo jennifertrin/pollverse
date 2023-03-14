@@ -15,8 +15,9 @@ yarn dev
 
 https://pollverse.vercel.app
 
-
 ## Important Links
+Slide Deck: https://www.canva.com/design/DAFdNCi7i7U/CylG5ZlqonKbK_tGHMVRaA/edit?utm_content=DAFdNCi7i7U&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton
+
 Marketing site: https://pollverse.my.canva.site/
 
 Live app: https://pollverse.vercel.app
