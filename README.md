@@ -31,6 +31,8 @@ https://pollverse.vercel.app
 
 **Marketing site**: https://pollverse.my.canva.site/
 
+**Demo Video**: https://youtu.be/cwMABMoIxNE
+
 **Live app**: https://pollverse.vercel.app
 
 **DAO Example on Realms**: https://app.realms.today/dao/3qnpdzqPZefVvD9LjJQee8oFTQAqWTbX1f3hSeh1SYAX?cluster=devnet
