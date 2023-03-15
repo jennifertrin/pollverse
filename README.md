@@ -114,19 +114,25 @@ I created AR experiences of public infrastructure designs with links to a Realms
 
 I utilized the Polycam app to 3D scan real-life public infrastructure objects such as signs and bike racks in Bellevue, Washington. Afterwards, I refined the 3D assets in Blender. I used Adobe Aero to develop the AR experiences with the refined 3D assets. 
 
-**Examples**
+**AR Examples**
 
-Example Video: https://youtu.be/DL7c-6guawA
+Users can see how the 3D designs would look like in their current surrounding using the AR Demo links (iOS users can view directly in their phone browser and Android users need to download the Adobe Aero app). Users can click on the Vote box to get directly sent to the Realms DAO proposal and Feedback box to get directly sent to the Dispatch forum thread.
 
-AR Demo: https://adobeaero.app.link/Oi05Y58f7xb
+**Example Video**: https://youtu.be/DL7c-6guawA
+
+**AR Demo**: https://adobeaero.app.link/Oi05Y58f7xb
 
 <img width="416" alt="New Sign Display AR Screenshot" src="https://user-images.githubusercontent.com/38402540/225167686-2f5871e0-200e-46c1-8bda-5114146b0535.png">
 
-Example Video: https://youtube.com/shorts/AMWx08lYVVY?feature=share
+**Example Video**: https://youtube.com/shorts/AMWx08lYVVY?feature=share
 
-AR Demo: https://adobeaero.app.link/yeQVJXs37xb
+**AR Demo**: https://adobeaero.app.link/yeQVJXs37xb
 
 <img width="405" alt="New Bike Lane Display AR Screenshot" href="https://adobeaero.app.link/yeQVJXs37xb" src="https://user-images.githubusercontent.com/38402540/225168201-afb32635-94cd-447c-b43b-b7db3c75da07.png">
+
+**WebGL Game Example**
+
+<img width="1024" alt="Screen Shot 2023-03-14 at 7 03 47 PM" src="https://user-images.githubusercontent.com/38402540/225185815-cb1fde5a-7d0e-403c-bcf6-603d0e81cea9.png">
 
 **Built Using**: Unity, [Blockade Labs Skybox](https://www.blockadelabs.com/), 3D Scanning using [Polycam](https://poly.cam/), Blender, Adobe Aero
 
