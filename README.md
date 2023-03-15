@@ -51,7 +51,24 @@ https://pollverse.vercel.app
 
 - AR Demo: https://adobeaero.app.link/yeQVJXs37xb
 
-**Creating the CivicTechDAO…**
+## Technical Overview
+
+- React Application built on NextJS framework
+- MongoDB as database
+
+
+- Solana Wallet Adapters for wallet connection
+- Civic Key for human verification (I intended to use Civic Key for location verification as well. However, the Civic team suggested human verification for demo purposes due to cost of their location verification service).
+- Dispatch SDK for web3 Discourse-like forum
+- Dialect SDK for in-app web3 notifications
+- Realms SDK for DAO and proposal creation
+- Polycam for 3D scanning of objects, Blender for editing 3D objects, and Adobe Aero to create AR experiences
+- Solana Cli for DAO membership distribution
+- Solana Pay SDK for community donations to public infrastructure projects
+- Blockade Labs API to enable user-generated designs
+- Unity for user-perspective game example
+
+## Features
 
 ### 🙋‍♀️ User Onboarding
 
@@ -59,7 +76,7 @@ In the US, legal residents without citizenship can't participate in voting. Gove
 
 Pollverse verifies users' legal residency and citizenship upon signup. Citizens will still have full access to the political system. However, governments can introduce  DAO-like proposals for community matters where citizens and legal residents can vote and post opinions. 
 
-**Built Using**: Solana Wallet Adapters, [Civic Key](https://www.civic.com/)
+**Built Using**: Solana Wallet Adapters, [Civic Key](https://www.civic.com/), Solana Cli
 
 ### 🗳️ Voting on Community Matters
 
