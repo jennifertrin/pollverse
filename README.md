@@ -49,7 +49,7 @@ https://pollverse.vercel.app
 
 - Example Video: https://youtube.com/shorts/AMWx08lYVVY?feature=share
 
-- AR Demo: https://adobeaero.app.link/Oi05Y58f7xb
+- AR Demo: https://adobeaero.app.link/yeQVJXs37xb
 
 **Creating the CivicTechDAO…**
 
@@ -99,9 +99,17 @@ I utilized the Polycam app to 3D scan real-life public infrastructure objects su
 
 **Examples**
 
-https://youtu.be/DL7c-6guawA
+Example Video: https://youtu.be/DL7c-6guawA
 
-https://youtube.com/shorts/AMWx08lYVVY?feature=share
+AR Demo: https://adobeaero.app.link/Oi05Y58f7xb
+
+<img width="416" alt="New Sign Display AR Screenshot" src="https://user-images.githubusercontent.com/38402540/225167686-2f5871e0-200e-46c1-8bda-5114146b0535.png">
+
+Example Video: https://youtube.com/shorts/AMWx08lYVVY?feature=share
+
+AR Demo: https://adobeaero.app.link/yeQVJXs37xb
+
+<img width="405" alt="New Bike Lane Display AR Screenshot" href="https://adobeaero.app.link/yeQVJXs37xb" src="https://user-images.githubusercontent.com/38402540/225168201-afb32635-94cd-447c-b43b-b7db3c75da07.png">
 
 **Built Using**: Unity, [Blockade Labs Skybox](https://www.blockadelabs.com/), 3D Scanning using [Polycam](https://poly.cam/), Blender, Adobe Aero
 
