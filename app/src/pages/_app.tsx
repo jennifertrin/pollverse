@@ -111,6 +111,10 @@ export default function App({ Component, pageProps }: AppProps) {
                     path={`${forumURL}/:id${topicURL}/2`}
                     element={<TopicModal topicId={2} />}
                   />
+                  <Route
+                    path={`${forumURL}/:id${topicURL}/5`}
+                    element={<TopicModal topicId={5} />}
+                  />
                 </Routes>
               </BrowserRouter>
             </DispatchApp>

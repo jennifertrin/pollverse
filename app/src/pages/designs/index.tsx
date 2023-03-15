@@ -1,14 +1,14 @@
-// import PayItem from "@/components/Pay/PayItem";
-// import { imageUtils } from "@/util/imageUtils";
+import PayItem from "@/components/Pay/PayItem";
+import { imageUtils } from "@/util/imageUtils";
 import { useEffect, useState } from "react";
 // import { getAllProposals } from "@solana/spl-governance";
-import { Connection, PublicKey } from "@solana/web3.js";
+// import { Connection, PublicKey } from "@solana/web3.js";
 import DesignList from "@/components/Pay/DesignList";
 import ARDisplay from "@/components/Game/ARDisplay";
 
 export default function DesignPage() {
   const [designs, setDesigns] = useState<any>();
-  // const [proposals, setProposals] = useState<any[]>([]);
+  const [proposals, setProposals] = useState<any[]>([]);
 
   useEffect(() => {
     async function getAllDesigns() {
@@ -52,41 +52,43 @@ export default function DesignPage() {
   //   fetchData().then((response) => console.log('response', response));
   // }, []);
 
-  // function getCorrectProposal(proposalName: string) {
-  //   const index = proposals.findIndex(
-  //     (item) => item.account.name === proposalName
-  //   );
-  //   const correctProposal = proposals[index];
-  //   return correctProposal;
-  // }
+  function getCorrectProposal(proposalName: string) {
+    const index = proposals.findIndex(
+      (item) => item.account.name === proposalName
+    );
+    const correctProposal = proposals[index];
+    return correctProposal;
+  }
 
   return (
     <div className="w-full mt-8">
       <h1 className="text-5xl font-bold my-12 ml-8">Your designs</h1>
-      <div className="mb-8">
-        {/* {designs
-          ? designs?.map(
-              (design: {
-                proposalName: string;
-                amount: number;
-                _id: string;
-                sceneName: string;
-                sceneLink: string;
-              }) => (
-                <PayItem
-                  key={design.sceneName}
-                  id={design._id}
-                  amount={design.amount}
-                  title={design.sceneName}
-                  imageLink={imageUtils(design.sceneName)}
-                  imageAlt={design.sceneName}
-                  linkUrl={design.sceneLink}
-                  proposal={getCorrectProposal(design.proposalName)}
-                />
-              )
-            )
-          : null} */}
+      <div className="mb-8 w-full mx-auto items-center justify-center">
         <ARDisplay />
+        <div className="flex items-center justify-center">
+          {designs
+            ? designs?.map(
+                (design: {
+                  proposalName: string;
+                  amount: number;
+                  _id: string;
+                  sceneName: string;
+                  sceneLink: string;
+                }) => (
+                  <PayItem
+                    key={design.sceneName}
+                    id={design._id}
+                    amount={design.amount}
+                    title={design.sceneName}
+                    imageLink={imageUtils(design.sceneName)}
+                    imageAlt={design.sceneName}
+                    linkUrl={design.sceneLink}
+                    proposal={getCorrectProposal(design.proposalName)}
+                  />
+                )
+              )
+            : null}
+        </div>
       </div>
       <DesignList />
     </div>
