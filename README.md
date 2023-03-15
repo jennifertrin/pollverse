@@ -31,6 +31,8 @@ https://pollverse.vercel.app
 
 **Marketing site**: https://pollverse.my.canva.site/
 
+**Demo Video**: https://youtu.be/cwMABMoIxNE
+
 **Live app**: https://pollverse.vercel.app
 
 **DAO Example on Realms**: https://app.realms.today/dao/3qnpdzqPZefVvD9LjJQee8oFTQAqWTbX1f3hSeh1SYAX?cluster=devnet
@@ -49,9 +51,26 @@ https://pollverse.vercel.app
 
 - Example Video: https://youtube.com/shorts/AMWx08lYVVY?feature=share
 
-- AR Demo: https://adobeaero.app.link/Oi05Y58f7xb
+- AR Demo: https://adobeaero.app.link/yeQVJXs37xb
 
-**Creating the CivicTechDAO…**
+## Technical Overview
+
+- React Application built on NextJS framework
+- MongoDB as database
+
+
+- Solana Wallet Adapters for wallet connection
+- Civic Key for human verification (I intended to use Civic Key for location verification as well. However, the Civic team suggested human verification for demo purposes due to cost of their location verification service).
+- Dispatch SDK for web3 Discourse-like forum
+- Dialect SDK for in-app web3 notifications
+- Realms SDK for DAO and proposal creation
+- Polycam for 3D scanning of objects, Blender for editing 3D objects, and Adobe Aero to create AR experiences
+- Solana Cli for DAO membership distribution
+- Solana Pay SDK for community donations to public infrastructure projects
+- Blockade Labs API to enable user-generated designs
+- Unity for user-perspective game example
+
+## Features
 
 ### 🙋‍♀️ User Onboarding
 
@@ -59,7 +78,7 @@ In the US, legal residents without citizenship can't participate in voting. Gove
 
 Pollverse verifies users' legal residency and citizenship upon signup. Citizens will still have full access to the political system. However, governments can introduce  DAO-like proposals for community matters where citizens and legal residents can vote and post opinions. 
 
-**Built Using**: Solana Wallet Adapters, [Civic Key](https://www.civic.com/)
+**Built Using**: Solana Wallet Adapters, [Civic Key](https://www.civic.com/), Solana Cli
 
 ### 🗳️ Voting on Community Matters
 
@@ -97,11 +116,25 @@ I created AR experiences of public infrastructure designs with links to a Realms
 
 I utilized the Polycam app to 3D scan real-life public infrastructure objects such as signs and bike racks in Bellevue, Washington. Afterwards, I refined the 3D assets in Blender. I used Adobe Aero to develop the AR experiences with the refined 3D assets. 
 
-**Examples**
+**AR Examples**
 
-https://youtu.be/DL7c-6guawA
+Users can see how the 3D designs would look like in their current surrounding using the AR Demo links (iOS users can view directly in their phone browser and Android users need to download the Adobe Aero app). Users can click on the Vote box to get directly sent to the Realms DAO proposal and Feedback box to get directly sent to the Dispatch forum thread.
 
-https://youtube.com/shorts/AMWx08lYVVY?feature=share
+**Example Video**: https://youtu.be/DL7c-6guawA
+
+**AR Demo**: https://adobeaero.app.link/Oi05Y58f7xb
+
+<img width="416" alt="New Sign Display AR Screenshot" src="https://user-images.githubusercontent.com/38402540/225167686-2f5871e0-200e-46c1-8bda-5114146b0535.png">
+
+**Example Video**: https://youtube.com/shorts/AMWx08lYVVY?feature=share
+
+**AR Demo**: https://adobeaero.app.link/yeQVJXs37xb
+
+<img width="405" alt="New Bike Lane Display AR Screenshot" href="https://adobeaero.app.link/yeQVJXs37xb" src="https://user-images.githubusercontent.com/38402540/225168201-afb32635-94cd-447c-b43b-b7db3c75da07.png">
+
+**WebGL Game Example**
+
+<img width="1024" alt="Screen Shot 2023-03-14 at 7 03 47 PM" src="https://user-images.githubusercontent.com/38402540/225185815-cb1fde5a-7d0e-403c-bcf6-603d0e81cea9.png">
 
 **Built Using**: Unity, [Blockade Labs Skybox](https://www.blockadelabs.com/), 3D Scanning using [Polycam](https://poly.cam/), Blender, Adobe Aero
 
