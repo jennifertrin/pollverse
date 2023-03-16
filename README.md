@@ -84,7 +84,13 @@ Pollverse verifies users' legal residency and citizenship upon signup. Citizens 
 
 By opening certain aspects of government decision-making to the community, governments can quickly access top industry talent for faster and more informed decisions. For instance, implementing DAO-like proposals for procurement selection could prevent contractor overcharging and scams, such as the case of the Canadian government paying $54 million for a consultancy to build the ArriveCAN application, a simple mobile and web application to upload COVID-19 related travel documentation. In a DAO proposal process, verified software developers in Canada could raise concerns about the app building being overpriced. Underfunded governments and civic organizations can unlock the community to help them make better decisions. 
 
-**Built Using**: [Dispatch](https://www.dispatch.forum/)
+For threads requesting feedback on designs of public infrastructure, users can utilize Blockade Labs' skybox to generate their own designs and effectively, help governments prototype building public infrastructure faster.
+
+**Example of using Blockade Labs' skybox to generate a design of more favorable public infrastructure within Pollverse**
+
+<img width="956" alt="Screen Shot 2023-03-14 at 10 17 34 PM" src="https://user-images.githubusercontent.com/38402540/225478838-afdd23d7-cb8d-4d7d-9431-e50081320898.png">
+
+**Built Using**: [Dispatch](https://www.dispatch.forum/), [Realms](https://app.realms.today/realms?cluster=devnet)
 
 ### 📥 Notifications
 
