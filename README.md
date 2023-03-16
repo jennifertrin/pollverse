@@ -2,7 +2,7 @@
 
 ## 🌎 Overview
 
-Pollverse is a metaverse-based game amplifying better public policy. It digitally transforms the city into a new network state that enables wider inclusion, better understand the implications of public policy, and better technical procurement decisions. 
+Pollverse is a metaverse-based game amplifying better public policy. It digitally transforms the city into a new network state that enables wider inclusion, better understanding of the implications of public policy, and better technical procurement decisions. 
 
 Governments and civic organizations encounter more civic disengagement especially amongst youth and immigrants, struggle to outreach to their communities at scale, and make poor decisions on how to modernize their tech stack. 
 
