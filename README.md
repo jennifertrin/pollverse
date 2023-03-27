@@ -59,16 +59,16 @@ https://pollverse.vercel.app
 - MongoDB as database
 
 
-- Solana Wallet Adapters for wallet connection
-- Civic Key for human verification (I intended to use Civic Key for location verification as well. However, the Civic team suggested human verification for demo purposes due to cost of their location verification service).
-- Dispatch SDK for web3 Discourse-like forum
-- Dialect SDK for in-app web3 notifications
-- Realms SDK for DAO and proposal creation
-- Polycam for 3D scanning of objects, Blender for editing 3D objects, and Adobe Aero to create AR experiences
+- [Solana Wallet Adapters](https://github.com/solana-labs/wallet-adapter) for wallet connection
+- [Civic Key](https://www.civic.com/) for human verification (I intended to use Civic Key for location verification as well. However, the Civic team suggested human verification for demo purposes due to cost of their location verification service).
+- [Dispatch SDK](https://www.dispatch.forum/) for web3 Discourse-like forum
+- [Dialect SDK](https://www.dialect.to/) for in-app web3 notifications
+- [Realms SDK](https://app.realms.today/discover) for DAO and proposal creation
+- [Polycam](https://poly.cam/) for 3D scanning of objects, Blender for editing 3D objects, and [Adobe Aero](https://www.adobe.com/products/aero.html) to create AR experiences
 - Solana Cli for DAO membership distribution
-- Solana Pay SDK for community donations to public infrastructure projects
-- Blockade Labs API to enable user-generated designs
-- Unity for user-perspective game example
+- [Solana Pay SDK](https://github.com/solana-labs/solana-pay) for community donations to public infrastructure projects
+- [Blockade Labs API](https://www.blockadelabs.com/) to enable user-generated designs
+- [Unity](https://unity.com/) for user-perspective game example
 
 ## Features
 
