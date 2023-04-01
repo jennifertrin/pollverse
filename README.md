@@ -64,7 +64,7 @@ https://pollverse.vercel.app
 - [Dispatch SDK](https://www.dispatch.forum/) for web3 Discourse-like forum
 - [Dialect SDK](https://www.dialect.to/) for in-app web3 notifications
 - [Realms SDK](https://app.realms.today/discover) for DAO and proposal creation
-- [Polycam](https://poly.cam/) for 3D scanning of objects, Blender for editing 3D objects, and [Adobe Aero](https://www.adobe.com/products/aero.html) to create AR experiences
+- [Polycam](https://poly.cam/) for 3D scanning of objects, Blender for editing 3D objects, storage of 3D objects on [CO2.Storage](https://co2.storage/) by [Filecoin](https://filecoin.io/), and [Adobe Aero](https://www.adobe.com/products/aero.html) to create AR experiences
 - Solana Cli for DAO membership distribution
 - [Solana Pay SDK](https://github.com/solana-labs/solana-pay) for community donations to public infrastructure projects
 - [Blockade Labs API](https://www.blockadelabs.com/) to enable user-generated designs
