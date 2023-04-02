@@ -11,6 +11,7 @@ interface Props {
   amount: number;
   proposal: any;
   title: string;
+  gameAsset?: string;
 }
 
 export default function PayItem({
@@ -20,7 +21,8 @@ export default function PayItem({
   imageLink,
   linkUrl,
   proposal,
-  title
+  title,
+  gameAsset,
 }: Props) {
   const [open, setOpen] = useState<boolean>(false);
 
@@ -51,10 +53,27 @@ export default function PayItem({
         <div className="flex w-full">
           <VoteItem proposal={proposal} />
         </div>
-        <button onClick={() => setOpen(!open)} className="btn btn-primary normal-case text-md text-white font-bold py-2 px-4 rounded m-auto mr-6">
+        {gameAsset ? (
+          <a href={gameAsset}>
+            <button className="btn btn-primary normal-case text-md text-white font-bold py-2 px-4 rounded">
+              Get Game Asset
+            </button>
+          </a>
+        ) : null}
+        <button
+          onClick={() => setOpen(!open)}
+          className="btn btn-primary normal-case text-md text-white font-bold py-2 px-4 rounded m-auto mr-6"
+        >
           Donate To This Project
         </button>
-        {open ? <PopupModal amount={amount} designTitle={title} open={open} setOpen={setOpen} /> : null}
+        {open ? (
+          <PopupModal
+            amount={amount}
+            designTitle={title}
+            open={open}
+            setOpen={setOpen}
+          />
+        ) : null}
       </div>
     </div>
   );
