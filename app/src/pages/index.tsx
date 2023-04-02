@@ -52,6 +52,25 @@ export default function Home() {
         <div className="flex flex-col w-full gap-2 ml-4 mt-2 mb-8 px-0 lg:px-24 mx-auto">
           <ProfileSection />
           <TypeAnimation />
+          <a href="https://co2.storage/assets">
+              <button className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 gap-4 mb-4 rounded inline-flex items-center">
+                <span>Go to Eco Game Assets Database</span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  className="w-6 h-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
+                  />
+                </svg>
+              </button>
+            </a>
           <div className="flex flex-row gap-12">
             {dashboardItems.map((item) => (
               <div key={item.title}>

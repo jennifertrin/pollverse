@@ -33,6 +33,7 @@ export default function DesignList() {
           designTitle={design.sceneName}
           designDescription={design.sceneDescription}
           imageSrc={getSceneLink(design.sceneLink)}
+          gameAsset={design.filecoinStorage}
         />
       ))}
     </div>
