@@ -22,13 +22,11 @@ export default function DesignItem({
       <div className="flex flex-col">
         <h1 className="flex text-4xl font-bold mt-8">{designTitle}</h1>
         <div className="flex text-md mt-4 mb-4">{designDescription}</div>
-        {gameAsset ? (
-          <a href={gameAsset}>
-            <button className="btn btn-primary normal-case text-md text-white font-bold py-2 px-4 rounded">
-              Get Game Asset
-            </button>
-          </a>
-        ) : null}
+        <a href={gameAsset}>
+          <button className="btn btn-primary mb-4 w-full normal-case text-md text-white font-bold py-2 px-4 rounded">
+            Get Game Asset
+          </button>
+        </a>
         <button
           onClick={() => setOpen(!open)}
           className="btn btn-primary normal-case text-md text-white font-bold py-2 px-4 rounded"
